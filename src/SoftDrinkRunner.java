@@ -1,3 +1,8 @@
+/**
+ * @author Z
+ * @since 18 December 2017
+ */
+
 import java.util.Scanner;
 import java.util.Map;
 
