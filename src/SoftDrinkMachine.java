@@ -7,18 +7,31 @@ public class SoftDrinkMachine
     {
         Quarter(0.25), Dime(0.10), Nickel(0.05), Penny(0.01);
 
-        private double iValue;
+        private final double iValue;
 
-        private Coins(double iValue)
+        /**
+         * A helper function that stores enum data
+         * @param iValue Value of the coin
+         */
+        Coins(double iValue)
         {
             this.iValue = iValue;
         }
 
+        /**
+         * Gets coin value
+         * @return Coins value
+         */
         public double getValue()
         {
             return iValue;
         }
 
+        /**
+         * Converts floating points to coin names
+         * @param iValue
+         * @return A Map<Coin Name, Amount>
+         */
         public static Map<String, Integer> convert(double iValue)
         {
             Map<String, Integer> change = new HashMap<>();
@@ -41,6 +54,11 @@ public class SoftDrinkMachine
         }
     };
 
+    /**
+     * Returns price base on temperature ranges
+     * @param iTemp Temperature
+     * @return Price in floating points
+     */
     public static double getPrice(double iTemp)
     {
         if (iTemp < 50) return 0.50;
@@ -55,6 +73,10 @@ public class SoftDrinkMachine
         return 1.00;
     }
 
+    /**
+     * Generates a random temperature
+     * @return Random integer between 10 - 120
+     */
     public static int randomTemperature()
     {
         return (int) (Math.random() * (120 - 10 + 1)) + 10;
